@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Quantos paes voce come por dia</span>
+    <input type="number" id="input_paes"><br>
+
+    <span>quantos pacotes de bolacha recheada voce come por dia</span>
+    <input type="number" id="input_bolacha"><br>
+
+    <span>quantos copos de achocolatado voce toma por dia</span>
+    <input type="number" id="input_achocolatado"><br>
+
+    <button onclick="verificar()">Verificar calorias</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var paes = Number(input_paes.value);
+        var bolacha = Number(input_bolacha.value);
+        var achocolatado = Number(input_achocolatado.value);
+
+        var quant_paes = paes * 50;
+        var quant_bolacha = bolacha * 80;
+        var quant_achocolatado = achocolatado*70;
+        var calorias = quant_paes+quant_bolacha+quant_achocolatado;
+
+        if(calorias<200){
+            div.innerHTML = `
+            Parabéns, vai ficar em forma !
+            `
+        }else if(calorias<=400){
+            div.innerHTML = `
+            Cuidado, vai ficar menos saudável !
+            `
+        }else if(calorias>400){
+            div.innerHTML = `
+            Alerta crítico de saúde !!!
+            `
+        }
+
+    }
+</script>
