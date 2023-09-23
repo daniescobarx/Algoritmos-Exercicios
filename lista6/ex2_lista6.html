@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite a renda familiar mensal </span>
+    <input type="number" id="input_renda">
+
+    <button onclick="Calculo()">Analisar renda</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function Calculo(){
+        var renda = Number(input_renda.value);
+
+        if(renda<=250){
+            div.innerHTML = `
+            Classe E
+            `
+        }else if(renda<=900){
+            div.innerHTML = `
+            Classe D
+            `
+        }else if(renda<=2500){
+            div.innerHTML = `
+            Classe C
+            `
+        }else if(renda<=9500){
+            div.innerHTML = `
+            Classe B
+            `
+        }else{
+            div.innerHTML = `
+            Classe A
+            `
+        }
+    }
+</script>
