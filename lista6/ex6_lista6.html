@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .corinthians{
+            background-color: black;
+            color: white;
+        }
+
+        .palmeiras{
+            background-color: green;
+            color: white;
+        }
+
+        .santos{
+            background-color: white;
+            color: black;
+        }
+
+        .saopaulo{
+            background-color: black;
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <span>Qual é o time grande de São Paulo que voce torce (corinthians, palmeiras, santos, são paulo)</span>
+    <input type="text" id="input_time">
+
+    <button onclick="Verificar()">Fale sobre esse time</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function Verificar(){
+        var time = (input_time.value)
+
+        if(time == "corinthians"){
+            div.innerHTML = `
+            <p class="corinthians">Salve o Corinthians</p>
+            `
+        }else if(time == "palmeiras"){
+            div.innerHTML = `
+            <p class="palmeiras">Salve o alviverde imponente</p>
+            `
+        }else if(time == "santos"){
+            div.innerHTML = `
+            <p class="santos">Agora quem dá a bola é o Santos</p>
+            `
+        }else if(time == "são paulo"){
+            div.innerHTML = `
+            <p class="saopaulo">Salve o Tricolor paulista</p>
+            `
+        }else{
+            div.innerHTML = `
+            escolha um time melhor!!
+            `
+        }
+    }
+</script>
