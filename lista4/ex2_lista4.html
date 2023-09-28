@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>Quantas latinhas de refri toma por dia</span>
+    <input id="input_latas" type="number">
+
+    <button onclick="calcular()">Quantos refris?</button>
+
+    <div id="div_latas"></div>
+
+    <script>
+        function calcular() {
+
+            var latas = Number(input_latas.value);
+            var quant = latas * 365;
+
+            if (quant > 500) {
+                div_latas.innerHTML = "Beba menos latas!";
+            }
+            if (quant < 500) {
+                div_latas.innerHTML = "Continue assim!";
+            }
+        }
+    </script>
+</body>
+
+</html>
