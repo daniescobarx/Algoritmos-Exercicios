@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>Qual valor da pizza</span>
+    <input id="input_valor" type="number">
+
+    <span>Quantidade de amigos</span>
+    <input id="input_quant" type="number">
+
+    <button onclick="Calcular()">
+        Rola a pizza?
+    </button>
+
+    <div id=" div_pizza"></div>
+
+</body>
+
+</html>
+
+<script>
+    function Calcular() {
+        var valor = Number(input_valor.value)
+        var quant = Number(input_quant.value)
+        var media = valor / quant
+
+        if (media > 20) {
+            div_pizza.innerHTML = `
+            Deu ruim! Pizza muito cara!, pizza de ${media}
+            `
+        }
+
+        if (media <= 20) {
+            div_pizza.innerHTML = `
+            Cada amigo vai pagar R$ ${media} pela pizza
+            `
+        }
+    }
+
+</script>
