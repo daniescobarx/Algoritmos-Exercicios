@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite a frequencia</span>
+    <input type="text" id="input_freq">
+
+    <button onclick="Analise()">Analisar frequencia</button>
+
+    <div id="div_analise"></div>
+</body>
+</html>
+
+<script>
+    function Analise(){
+        var freq = Number(input_freq.value);
+        if(freq<50){
+            div_analise.innerHTML = `
+            Aluno turista!<br>
+            <img src="https://d3ujk8tqtsey8o.cloudfront.net/imagens_face/small_1014-dia-do-turista.jpg">
+            `
+        }else{
+            div_analise.innerHTML = `
+            Aluno estudioso!<br>
+            <img src="https://media.istockphoto.com/id/961768024/pt/foto/studious-student-learning-taking-notes-in-the-night.jpg?s=170667a&w=0&k=20&c=caev8RFk5JxqGDwkF-z4RHsASKCEvXqlqpf6chF7GZ8=">
+            `
+        }
+    }
+</script>
