@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite a temperatura do ambiente</span>
+    <input type="number" id="input_temp">
+
+    <button onclick="Verificar()">Verificar clima</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<!-- Apropriada p/ conservar alimento - Caso a temperatura for menor que 10 
+
+   Inapropriada p/ conservar alimento - Caso a temperatura for a partir de 10  -->
+
+<script>
+    function Verificar(){
+        var temp = Number(input_temp.value);
+
+        if(temp >= 10){
+            resultado.innerHTML = `Inapropriada p/ conservar alimento<br>
+            <img src="https://static.tuasaude.com/media/article/ed/zg/como-identificar-alimentos-estragados_22594_l.jpg">`;
+
+        }else{
+            resultado.innerHTML = `Apropriada p/ conservar alimento
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfP1V8_T0ezsRbGUUYThb1PtgRJLJZEedo4w&usqp=CAU">
+            `; 
+
+        }
+    }
+</script>
+
