@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>De quantos em quantos dias você faz musculação</span><br>
+    <input type="number" name="" id="input_dias"><br>
+
+    <button onclick="verificar()">Exibir rotina mensal</button>
+
+    <div id="div"></div>
+
+    <script>
+        function verificar() {
+            var dia = Number(input_dias.value);
+            var contador = 1;
+            var rotina = '';
+
+            while (contador <= 30) {
+                if (contador === 1) {
+                    rotina += `Dia 1 - Musculação<br>`;
+                } else if (contador % (dia + 1) === 0) {
+                    rotina += `Dia ${contador} - Musculação<br>`;
+                } else {
+                    rotina += `Dia ${contador} - Comer, dormir etc<br>`;
+                }
+                contador++;
+            }
+
+            div.innerHTML = `${rotina}`;
+        }
+    </script>
+</body>
+</html>

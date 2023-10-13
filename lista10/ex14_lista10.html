@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>digite sua idade</span>
+    <input type="number" id="input_idade">
+
+    <button onclick="faseVida()">Verificar</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function faseVida(){
+        var idade = Number(input_idade.value);
+        var contador = 1;
+
+        while (idade>=contador) {
+            if(contador<=4){
+                div.innerHTML += `${contador} anos (Primeira infancia) <br>`
+            }else if(contador<=6){
+                div.innerHTML += `${contador} anos (Pré escola) <br>`
+            }else if(contador<=10){
+                div.innerHTML += `${contador} anos (Segunda Infancia) <br>`
+            }else if(contador<=18){
+                div.innerHTML += `${contador} anos (Adolescencia) <br>`
+            }else if(contador<=50){
+                div.innerHTML += `${contador} anos (Adulto) <br>`
+            }else if(contador>50 && contador<=100){
+                div.innerHTML += `${contador} anos
+                (Melhor idade) <br>`
+            }else{
+                div.innerHTML += `${contador} anos Matusalém <br>`
+            }
+            contador++
+        }
+    }
+</script>

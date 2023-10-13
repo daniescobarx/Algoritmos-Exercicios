@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>exercicio 15</title>
+</head>
+<body>
+
+    <span for="numeroElefantes">Quantidade de Elefantes:</span>
+    <input type="number" id="input_elefantes">
+
+    <button onclick="atazanar()">Atazanar a Médium</button>
+
+    <div id="div"></div>
+
+    <script>
+        function atazanar() {
+            var numeroElefantes = Number(input_elefantes.value);
+            var letra = "";
+
+            var contador = 1;
+            while (contador <= numeroElefantes) {
+                letra += contador + "elefante";
+                if (contador > 1) {
+                    letra += "s";
+                }
+                letra += "incomodam<br>"
+
+                if (contador < numeroElefantes) {
+                    letra += ", ";
+                }
+                contador++;
+            }
+
+            letra += " muito mais!";
+            
+            // Exibir a letra na página
+            div.innerHTML = `${letra}`;
+        }
+
+    </script>
+</body>
+</html>
