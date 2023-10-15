@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite um numero entre 0 a 200</span>
+    <input type="number" id="input_num"><br>
+
+    <button onclick="multiplos()">Adoro múltiplos de 5</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function multiplos(){
+        div.innerHTML = ``;
+
+        var num = Number(input_num.value);
+        var contador = 0;
+
+        while(contador<=num){
+            div.innerHTML += `${contador}<br>`
+            contador+=5;
+        }
+    }
+</script>

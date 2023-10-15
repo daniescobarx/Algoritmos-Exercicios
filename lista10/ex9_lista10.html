@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a) Pergunte ao usuário um número;
+
+b) Pergunte ao usuário uma frase.
+
+c) Ao clicar num botão "Papagaio", a frase é exibida N vezes em N alerts, onde N é o número informado em a) 
+
+ -->
+
+ <span>digite um numero</span>
+ <input type="number" id="input_num"><br>
+
+ <span>Digite uma frase</span>
+ <input type="text" id="input_frase">
+
+ <button onclick="verificar()">Papagaio</button>
+
+</body>
+</html>
+<script>
+    function verificar(){
+        var quant = Number(input_num.value)
+        var frase = input_frase.value;
+        var contador = 1;
+
+        while(contador<=quant){
+            alert(`${contador} ${frase}`)
+            
+            contador+=1;
+        }
+    }
+</script>

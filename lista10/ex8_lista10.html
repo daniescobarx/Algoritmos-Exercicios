@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite um numero entre 0 a 200</span>
+    <input type="number" id="input_num"><br>
+
+    <button onclick="verificar()">Viva o 7</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function verificar(){
+        div.innerHTML = ``
+        var num = Number(input_num.value);
+        var contador = 0;
+
+        while(contador<=num){
+            div.innerHTML += `${contador}<br>`
+            contador+=7;
+        }
+    }
+</script>
