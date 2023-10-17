@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite o nome da pessoa que voce mais ama</span>
+    <input type="text" id="input_pessoa"><br>
+
+    <span>Digite o quanto voce ama a pessoa</span>
+    <input type="number"  id="input_quant">
+
+    <button onclick="Expressar()">Expressar amor</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function Expressar(){
+        div.innerHTML = ``;
+
+        var pessoa = input_pessoa.value;
+        var quanto = Number(input_quant.value)
+        var contador = 1;
+        while(contador<=quanto){
+            div.innerHTML += `${contador} ${pessoa}<br>`
+            contador +=1;
+        }
+    }
+</script>
