@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Diga algo sobre a materia de algoritmos</span><br>
+    <input type="text" id="input_frase">
+
+    <button onclick="verificar()">Ver</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function verificar(){
+        div.innerHTML = ``;
+
+        var contador = 1;
+        var frase = input_frase.value;
+
+        while(contador<8){
+            div.innerHTML += `${contador} ${frase}<br>`
+            contador+=1;
+        }
+        
+    }
+    
+</script>
