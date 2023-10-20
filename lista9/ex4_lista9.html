@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4 - var globais</title>
+</head>
+<body>
+    
+        <button onclick="esquerda()">Mover p/ Esquerda</button>
+        <button onclick="direita()">Mover p/ Direita</button>
+        Quantos pixels: <input id="qtdPx" type="number"><br><br>
+
+        <img id="img" width="190px" src="https://buystickershere.com/cdn/shop/products/186-bart_skateboard_toy_machine_1000x.jpg?v=1650723467">
+</body>
+</html>
+
+<script>
+    var margem = 0;
+    function esquerda(){
+        var pixels = Number(qtdPx.value);
+        margem -= pixels;
+        img.style.transform="scaleX(1)";
+        img.style.marginLeft = margem + "px"
+    }
+
+    function direita(){
+        var pixels = Number(qtdPx.value);
+        margem += pixels;
+        img.style.transform="scaleX(-1)";
+        img.style.marginLeft = margem + "px"
+    } 
+</script>

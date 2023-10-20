@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input_salario">
+    <button onclick="sim()">Confirmar salário</button>
+    <button onclick="pagar100()">Pagar conta de 100</button>
+    <button onclick="pagar500()">Pagar conta de 500</button>
+    <button onclick="ganhar2000()">Ganhar 2000 na loteria</button>
+    <div id="grana"></div>
+</body>
+
+</html>
+<script>
+    var salario = 0;
+    function sim() {
+        salario = Number(input_salario.value);
+        grana.innerHTML = `Grana atual: R$${salario}`
+    }
+    function pagar100() {
+        salario -= 100
+        grana.innerHTML = `Grana atual: R$${salario}`
+    }
+    function pagar500() {
+        salario -= 500
+        grana.innerHTML = `Grana atual: R$${salario}`
+    }
+    function ganhar2000() {
+        salario += 2000
+        grana.innerHTML = `Grana atual: R$${salario}`
+    }
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="banco" style="color: blue;">
+        <span>Total guardado no cofrinho: R$0 </span><br>
+        <span>Depósitos efetuados: 0 </span><br>
+        <span>Retiradas efetuadas: 0 </span> <br>
+    </div>
+    <button onclick="depositar05()">Depositar 0,50</button>
+    <button onclick="depositar2()">Depositar 2,00</button>
+    <button onclick="retirar05()">Retirar 0,50</button>
+    <button onclick="retirar()">Retirar</button>
+</body>
+
+</html>
+<script>
+    var valor = 0;
+    var depositos = 0;
+    var retiradas = 0;
+    function depositar05() {
+        valor += 0.50;
+        depositos += 1;
+        banco.innerHTML =
+            `
+        Total guardado no cofrinho: R$${valor} <br>
+        Depósitos efetuados: ${depositos} <br>
+        Retiradas efetuadas: ${retiradas} <br>
+        `
+    }
+
+    function depositar2() {
+        valor += 2.00;
+        depositos += 1;
+        banco.innerHTML =
+            `
+        Total guardado no cofrinho: R$${valor} <br>
+        Depósitos efetuados: ${depositos} <br>
+        Retiradas efetuadas: ${retiradas} <br>
+        `
+    }
+
+    function retirar05() {
+        valor -= 0.5;
+        retiradas += 1;
+        banco.innerHTML =
+            `
+        Total guardado no cofrinho: R$${valor} <br>
+        Depósitos efetuados: ${depositos} <br>
+        Retiradas efetuadas: ${retiradas} <br>
+        `
+    }
+
+    function retirar() {
+        valor -= valor;
+        retiradas += 1;
+        banco.innerHTML =
+            `
+        Total guardado no cofrinho: R$${valor} <br>
+        Depósitos efetuados: ${depositos} <br>
+        Retiradas efetuadas: ${retiradas} <br>
+        `
+    }
+</script>

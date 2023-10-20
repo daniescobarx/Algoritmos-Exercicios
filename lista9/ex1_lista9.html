@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img width="200px" id="img" src="https://i.pinimg.com/564x/73/fc/3a/73fc3ab554450e97b237f7347f9c7c4a.jpg">
+    <button onclick="aumentar()">Aumentar largura</button>
+    <button onclick="diminuir()">Diminuir largura</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+
+
+<script>
+    var inicial = 200
+
+    function aumentar(){
+        inicial+=10
+        img.style.width = inicial + "px"
+    }
+
+    function diminuir(){
+        inicial -=10
+        img.style.width = inicial + "px"
+
+    }
+    </script>
