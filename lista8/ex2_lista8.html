@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Digite sua nota do enem ou nota do vestibular interno</h2>
+    <span>digite sua nota do enem</span>
+    <input type="number" id="input_enem"><br>
+
+    <span>digite sua nota do vestibular interno do aluno</span>
+    <input type="number" id="input_vest">
+    <button onclick="avaliar()">Avaliacao</button>
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var enem = Number(input_enem.value);
+        var vest = Number(input_vest.value);
+
+        if(enem>=800 || vest>=700){
+            alert(`Parabén! Aprovado`)
+        }else{
+            alert(`Tente semestre que vem!`)
+        }
+    }
+</script>

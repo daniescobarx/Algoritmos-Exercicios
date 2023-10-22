@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>digite o valor da sua renda individual</span>
+    <input type="number" id="input_ri"><br>
+
+    <span>digite o valor da sua renda familiar</span>
+    <input type="number" id="input_rf"><br>
+
+    <button onclick="analise()">Terei o beneficio</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function analise(){
+        var individual = Number(input_ri.value);
+        var familiar = Number(input_rf.value);
+
+        if(individual<=2000 || familiar<=3000){
+            div.innerHTML = "Voce tera direito ao auxilio"
+        }else{
+            div.innerHTML = "Sem direito ao auxilio"
+        }
+    }
+</script>
