@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite quantos depositos voce fez no banco</span>
+    <input type="number" id="input_depositos"><br>
+
+    <span>Digite o valor dos depositos</span>
+    <input type="number" id="input_valor"><br>
+
+    <button onclick="acompanhar()">Acompanhar grana</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function acompanhar(){
+        div.innerHTML = "";
+
+        var depositos = Number(input_depositos.value);
+        var valor = Number(input_valor.value);
+        
+        var contador = 1;
+        var total = 0;
+
+        while(contador<=depositos){
+            total += valor
+            div.innerHTML += `${contador}º mes R$ ${total}<br>`
+            contador++;
+        }
+    }
+</script>
