@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 23</title>
+</head>
+
+<body>
+    <p>Digite o limite inferior da amostragem</p>
+    <input id="id_limiteInferior">
+
+    <p>Digite o limite superior da amostragem</p>
+    <input id="id_limiteSuperior">
+
+    <p>Digite um número para testar a divisibilidade</p>
+    <input id="id_divisibilidade">
+
+    <br><br> <button onclick="contar()">Contar</button>
+    <br>
+    <div id="resultado"></div>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var limiteInferior = Number(id_limiteInferior.value);
+        var limiteSuperior = Number(id_limiteSuperior.value);
+        var divisibilidade = Number(id_divisibilidade.value);
+
+        if(limiteInferior<=1){
+            alert("limite inferior tem que ser maior que 1")
+        }else if(limiteSuperior>=100 || limiteSuperior<=limiteInferior){
+            alert("numero tem que ser menor que 100 e maior que limite inferior")
+        }else if(divisibilidade<3 || divisibilidade>10){
+            alert("numero tem que estar entre 3 e 10")
+        }else{
+            var numerosDivisiveis = '';
+            var contador = 
+        }
+    }
+</script>
