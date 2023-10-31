@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite a altura min:
+    <input type="text" id="input_alturainicial"> <br>
+    Digite a altura max:
+    <input type="text" id="input_alturamax"> <br>
+    Digite seu nome:
+    <input type="text" id="input_nome"> <br>
+    Digite a altura do candidato a piloto:
+    <input type="text" id="input_candidato"> <br>
+    <button onclick="calcular()">Calcular</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var alturaInicial = Number(input_alturainicial.value);
+        var alturaMax = Number(input_alturamax.value);
+        var nome = input_nome.value;
+        var alturaCand = Number(input_candidato.value);
+
+
+        if (alturaInicial > 1 && alturaMax > alturaInicial) {
+            if (alturaCand > alturaInicial && alturaCand < alturaMax) {
+                resultado.innerHTML = `O candidato ${nome} com altura de ${alturaCand} participará do processo de seleção de piloto`
+            } else {
+                resultado.innerHTML = `Infelizmente o candidato ${nome} com altura de ${alturaCand} não atende os requisitos`
+            }
+        } else {
+            alert("ERRO")
+        }
+
+    }
+</script>

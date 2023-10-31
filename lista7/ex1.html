@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>digite a temperatura</span>
+    <input type="number" id="input_temp">
+
+    <button onclick="ver()">Ver</button>
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        var temp = Number(input_temp.value);
+
+        if(temp >= 21 && temp <=24){
+            div.innerHTML = "TEMPERATURA CONFORTAVEL :)"
+        }else{
+            div.innerHTML = "TEMPERATURA DESCONFORTAVEL :'("
+        }
+    }
+</script>
