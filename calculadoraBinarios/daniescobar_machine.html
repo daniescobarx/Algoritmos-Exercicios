@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversão de Números</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=VT323&display=swap');
+
+        body{
+            background-image: url(https://giffiles.alphacoders.com/209/209037.gif);
+            background-repeat: no-repeat;
+            background-size:cover;
+            font-family: "Source code pro";
+            
+        }
+
+        h2{
+            color: rgb(32, 187, 42);
+            font-family: "Source code pro";
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 1px rgba(168, 175, 172, 0.733);
+        }
+
+        h1{
+            color: rgb(32, 187, 42);
+            font-family: "Source code pro";
+            font-size: 38px;
+            letter-spacing: 3px;
+            text-shadow: 2px 3px 1px rgba(168, 175, 172, 0.733);
+        }
+
+        p{
+            font-size: 17px;
+            color: rgb(19, 173, 53);
+        }
+        .calc{
+            background-color: rgb(20, 23, 21);
+            text-align: center;
+            border-radius: 8px;
+            max-width: 450px;
+            margin:  auto;
+            padding: 20px;
+        }
+
+        input, select{
+            border-radius: 3px;
+            text-align: center;
+            background-color: rgb(110, 110, 110);
+            border: none;
+            padding:4px;
+            width:38%;
+        }
+
+        select{
+            font-size: 15px;
+            font-family: "Source code pro";
+        }
+
+        button{
+            font-family: "Source code pro";
+            font-size: 16px;
+            border-radius: 7px;
+            background-color: rgb(14, 107, 31);
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            text-transform: uppercase;
+            width: 48%;
+            height: 30px;
+        }
+        button:hover {
+        color: rgb(212, 248, 222);
+        transform: scale(1.05);
+        font-size: 17px;
+        }
+
+        .titulo{
+            text-align: center;
+        }
+
+        .incorreta{
+            color: red;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="titulo">
+        <h1><strong>Marise's Machine</strong></h1>
+        <h2><strong>Conversão de Números</strong></h2>
+    </div>
+
+    <div class="calc">
+    <p>Insira um número decimal</p>
+    <input type="number" id="inputDecimal"><br>
+    
+    <p>Escolha uma opção de conversão:</p>
+    <select id="selectConversao">
+        <option value="hexadecimal">Hexadecimal</option>
+        <option value="octal">Octal</option>
+        <option value="binario">Binário</option>
+    </select><br><br><br>
+    
+    <button onclick="iniciarJogo()">Iniciar tentativa</button><br><BR>
+    <button onclick="resetar()">Resetar pontuacao</button>
+    
+    <p id="mensagemResultado"></p>
+
+    <div id="div"></div>
+    </div>
+
+    <script>
+        var pontuacao = 0;
+
+        function iniciarJogo() {
+            var decimal = Number(inputDecimal.value)
+            var tipoConversao = selectConversao.value;
+    
+            var respostaCorreta = calcularConversao(decimal, tipoConversao);
+            var respostaUsuario = prompt("Digite a conversão para " + tipoConversao + " de " + decimal);
+
+            if (respostaUsuario === respostaCorreta) {
+                pontuacao++; 
+                div.innerHTML = `<p>Total de acertos:${pontuacao}<br><br>
+                Resposta está correta!
+                `;
+            } else {
+                pontuacao = 0;
+                div.innerHTML = 
+                `
+                <p class="incorreta">Total de acertos: ${pontuacao}<br><br>
+                    Resposta está incorreta.<br>
+                A resposta correta era: ${respostaCorreta}
+                `;
+            }
+        }
+
+        function resetar(){
+            pontuacao = 0;
+             div.innerHTML = `<p>
+            Total de acertos: ${pontuacao}
+            `
+        }
+
+        function calcularConversao(decimal, tipoConversao) {
+             if(tipoConversao === 'hexadecimal') {
+                    return decimal.toString(16);
+                }else if (tipoConversao === 'octal'){
+                    return decimal.toString(8);
+                }else if(tipoConversao === 'binario'){
+                    return decimal.toString(2);
+                }else{
+                    return "";
+                } 
+        }
+    </script>
+</body>
+</html>
+
