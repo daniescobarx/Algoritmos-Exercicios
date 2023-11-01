@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- quantidade -->
+    <span>Digite a quantidade de doce vendido (Macarons)</span>
+    <input type="number" id="input_macarons"><br>
+
+    <span>Digite a quantidade de doce vendido (brigadeiro)</span>
+    <input type="number" id="input_brigadeiro"><br>
+
+    <span>Digite a quantidade de doce vendido (Cupcakes)</span>
+    <input type="number" id="input_cupcake"><br>
+
+    <span>Digite a quantidade de doce vendido (Cheesecakes)</span>
+    <input type="number" id="input_cheesecake"><br>
+
+    <!-- precos -->
+    <span>Digite o preço da unidadade do Macarons</span>
+    <input type="number" id="input_preco_macarons"><br>
+
+    <span>Digite o preço da unidadade do Brigadeiro</span>
+    <input type="number" id="input_preco_brigadeiro"><br>
+
+    <span>Digite o preço da unidadade do Cupcake</span>
+    <input type="number" id="input_preco_cupcake"><br>
+
+    <span>Digite o preço da unidadade do Cheesecake</span>
+    <input type="number" id="input_preco_cheesecake"><br>
+
+    <button onclick="vendas()" >Verificar Vendas</button><br>
+
+    <div id="div"></div>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function vendas(){
+        div.innerHTML = ''
+        resultado.innerHTML = ''
+
+        var macarons = Number(input_macarons.value);
+        var brigadeiro = Number(input_brigadeiro.value);
+        var cupcake = Number(input_cupcake.value);
+        var cheesecake = Number(input_cheesecake.value);
+
+        var macaronsPreco = Number(input_preco_macarons.value);
+        var brigadeiroPreco = Number(input_preco_brigadeiro.value);
+        var cupcakePreco = Number(input_preco_cupcake.value);
+        var cheesecakePreco = Number(input_preco_cheesecake.value);
+        
+        var totalMacarons = macarons*macaronsPreco;
+        var totalBrigadeiro = brigadeiro*brigadeiroPreco;
+        var totalVenda = totalMacarons+ totalBrigadeiro;
+
+        var venda = 1;
+        var totalVenda = 0;
+       
+        if (macaronsPreco <= 0 ||brigadeiroPreco <= 0 || cupcakePreco <= 0 || cheesecakePreco <= 0 ) {
+            div.innerHTML = "O preço dos doces devem ser um número maior que zero.<br>";
+        }else {
+
+        for (var i = 0; i < macarons; i++) {
+            resultado.innerHTML += `Venda ${venda} - <img src="https://www.southernliving.com/thmb/dnsycw_-mf35yKRkq3cBsThVzrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Southern-Living_Macarons_025-0e05e0cd226d44609f55ed8bc9cd3a3e.jpg"> - R$ ${macaronsPreco}<br>`;
+            totalVenda += macaronsPreco;
+            venda++;
+        }
+
+        for (var i = 0; i < brigadeiro; i++) {
+            resultado.innerHTML += `Venda ${venda} - <img src="https://i.panelinha.com.br/i1/228-q-2859-brigadeiro.webp"> - R$ ${brigadeiroPreco}<br>`;
+            totalVenda += brigadeiroPreco;
+            venda++;
+        }
+
+        for (var i = 0; i < cupcake; i++) {
+            resultado.innerHTML += `Venda ${venda} - <img src="https://img.freepik.com/fotos-gratis/delicioso-cupcake-com-granulado-doce_23-2150798050.jpg?w=2000"> - R$ ${cupcakePreco}<br>`;
+            totalVenda += cupcakePreco;
+            venda++;
+        }
+
+        for (var i = 0; i < cheesecake; i++) {
+            resultado.innerHTML += `Venda ${venda} - <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjzp6CsmNy2kBMWIYjPEBpbzbwd9Yc3J_fUA&usqp=CAU"> - R$ ${cheesecakePreco}<br>`;
+            totalVenda += cheesecakePreco;
+            venda++;
+        }
+
+        resultado.innerHTML += `Com a quantidade de ${macarons} Macarons, ${brigadeiro} Brigadeiros, ${cupcake} Cupcakes e ${cheesecake} Cheesecakes, a venda totalizará R$ ${totalVenda}`;
+    }
+    
+}    
+
+</script>
+    
