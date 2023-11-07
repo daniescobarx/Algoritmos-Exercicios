@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    nome do produto <input type="text" id="input_produto"><br>
+    preço de compra <input type="number" id="input_preco"><br>
+    <button onclick="cadastrar()" >cadastrar</button><br>
+
+    <button onclick="relatorio()" >Relatorio de estoque</button><br>
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    var listaProduto = [];
+    var listaPreco = [];
+
+    function cadastrar(){
+        var produto = input_produto.value;
+        var preco = Number(input_preco.value);
+
+        listaProduto.push(produto);
+        listaPreco.push(preco);
+
+        
+    }
+</script>
