@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Cadastro de filhos <input type="text" id="input_filho">
+    <button onclick="cadastrarFilho()">Cadastrar</button><br>
+    <button onclick="atualizarFamilia()">Atualizar família</button>
+    <div id="div"></div>
+</body>
+
+</html>
+
+<script>
+    var filhos = [];
+
+    function cadastrarFilho() {
+        var nome = input_filho.value;
+        var nomeRepetido = false;
+
+        if (nome === "") {
+            alert("Campo não pode estar vazio");
+        } else {
+            for (var i = 0; i < filhos.length; i++) {
+                if (filhos[i] === nome) {
+                    nomeRepetido = true;
+                    break;
+                }
+            }
+
+            if (nomeRepetido) {
+                alert("Não pode haver 1 filho com o mesmo nome");
+            } else {
+                filhos.push(nome);
+            }
+        }
+    }
+
+    function atualizarFamilia() {
+        var qtdFilhos = filhos.length;
+        var custoParticular = qtdFilhos * 3000;
+        var custoPublica = qtdFilhos * 1500;
+
+        div.innerHTML = `Você tem ${qtdFilhos} filho(s)<br>
+      Seu custo mensal será aproximadamente R$ ${custoParticular} se colocá-los em escola particular ou R$ ${custoPublica} se eles estudarem em escola pública.`;
+    }
+</script>
