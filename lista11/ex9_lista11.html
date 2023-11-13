@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    digite o nome dos projetos que voce ja fez<br>
+    <input type="text" name="" id="input_projetos"><br>
+    <button onclick="cadastrar()" >Registrar projeto</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    listaprojetos = []
+    function cadastrar(){
+        div.innerHTML = ''
+        var projetos = input_projetos.value;
+        var qt = listaprojetos.length+1;
+
+        listaprojetos.push(projetos);
+
+        if(qt>=0 && qt<=4){
+            div.innerHTML = `Você já fez ${qt} projetos. Por isso você é um profissional Júnior<br>
+            <button onclick="mostrar()" >Mostrar projetos</button><br>
+
+            `
+        }else if(qt>=5 && qt<=12){
+            div.innerHTML = `Você já fez ${qt} projetos. Por isso você é um profissional Pleno<br>
+            <button onclick="mostrar()" >Mostrar projetos</button><br>
+            `
+        }else if(qt>=13){
+            div.innerHTML = `Você já fez ${qt} projetos. Por isso você é um profissional Senior<br>
+            <button onclick="mostrar()" >Mostrar projetos</button><br>
+            `
+        }
+    }
+
+    function mostrar(){
+        for(var i = listaprojetos.length - 1; i>=0; i--){
+            div.innerHTML += listaprojetos[i] + "<br>"
+        }
+    }
+</script>
