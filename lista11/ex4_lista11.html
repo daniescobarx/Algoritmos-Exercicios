@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    digite os filmes que voce mais gosta<br>
+    <input type="text" id="input_filmes"><br>
+
+    <button onclick="cadastrar()" >Cadastrar filme</button>
+    
+    <button onclick="ver()">Ver favoritos</button>
+
+    <!-- mostrar o que mais gosta e o ultimo da lista (que menos gosta) e total de filmes -->
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    var listafilmes = []
+    function cadastrar(){
+        var filmes = input_filmes.value
+        listafilmes.push(filmes);
+    }
+
+    function ver(){
+        div.innerHTML = ''
+        var resultado = ""
+        var qtd = listafilmes.length;
+
+        for(var i = 0; i < listafilmes.length ; i++){
+            if(i == 0 ){
+                resultado += `O filme que você mais gosta é o ${listafilmes[i]}<br>`
+            }else if(i == listafilmes.length - 1){
+                resultado += `O filme que você menos gosta é o ${listafilmes[i]}<br>`
+            }
+        }
+
+        div.innerHTML = `Quantidade total de filmes: ${qtd}<br> ${resultado}`
+    }
+</script>
