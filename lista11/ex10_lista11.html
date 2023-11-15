@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    nome da linha
+    <input type="text" id="input_nome_linha"><br>
+    <button onclick="gravarbusaoExibirLista()" >Gravar busao</button><br>
+
+    pesquise por uma linhas
+    <input type="text" id="input_pesquisa"><br>
+    <button onclick="pesquisarLinha()" > Pesquisar</button>
+
+    <div id="div"></div>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    // lista global, nao recria ela nvmente, so vai add
+    // lenght é comp (literal), porem lenght conta o 0 no for, entt n usar <=, apns < q length
+
+    // ao ir cadastrando deve ir aparecendo na tela em ordem inversa os onibus
+    // mostrar se ja pegou o onibus, e qual a ordem que ele andou no onibus
+    var listaLinhas = [];
+    
+    function gravarbusaoExibirLista(){
+        div.innerHTML = ''
+
+        var linha = input_nome_linha.value
+        listaLinhas.push(linha);
+
+        for(var i = listaLinhas.length-1; i>=0 ; i--){
+            div.innerHTML += `${listaLinhas[i]}<br>`
+        }
+    }
+
+    function pesquisarLinha(){
+        var pesquisa = input_pesquisa.value;
+
+        for(var i = 0; i < listaLinhas.length; i++){
+            if(pesquisa == listaLinhas[i]){
+                resultado.innerHTML += `você já andou nessa linha na ${i+1} vez, nome da linha:${listaLinhas[i]}<br>`
+            }else{
+                alert("Você não andou nesssa linha")
+            }
+        }
+    }
+</script>

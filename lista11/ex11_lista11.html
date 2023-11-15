@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite o valor do produto</span><br>
+    <input type="number" id="input_valor"><br>
+
+    <button onclick="cadastrar()" >Cadastrar</button>
+
+    <!-- ir cadastrando os preços e no final valor do estoque e quantidade de produtos -->
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+
+    var listaProdutos = []
+
+    function cadastrar(){
+        div.innerHTML = '';
+        
+        var preco = Number(input_valor.value);
+        var soma = 0
+        listaProdutos.push(preco);
+        var qtd = listaProdutos.length;
+
+        for(var i = 0; i < listaProdutos.length ; i++){
+            soma += listaProdutos[i]
+        }
+
+        div.innerHTML += `A sua quantidade total de produtos é de ${qtd}<br>
+        Valor total de estoque é de: ${soma}`
+
+    }
+</script>
