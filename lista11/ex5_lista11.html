@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    digite o nome do filme <input type="text" id="input_filme"><br>
+    <button onclick="cadastrar()" >Cadastrar Filme</button>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<script>
+    var listafilmes = [];
+
+    function cadastrar(){
+        div.innerHTML = ""
+
+        var filme = input_filme.value;
+        var qtd = listafilmes.length;
+        var resultado = ""
+
+        listafilmes.push(filme);
+
+        for(var i = 0; i < listafilmes.length; i++){
+            //(i == lista.length, nao funciona pois irá comparar com a info do vetor.)
+                if(i == 0){
+                    resultado += `filme favorito: ${listafilmes[i]}<br>`
+                 }else if(i == 2){
+                    resultado += `Seu 3º favorito: ${listafilmes[i]}<br>`
+                }    
+        }
+
+        if (listafilmes.length < 3) {
+                div.innerHTML = `Ainda faltam cadastrar ${3 - listafilmes.length} filmes.`;
+            }
+
+        div.innerHTML += `${resultado}`
+    }
+
+</script>
