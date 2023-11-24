@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    digite o nome dos bairros onde voce ja morou<br>
+    <input type="text" id="input_bairro"><br>
+
+    <button onclick="cadastrar()" >Cadastrar bairro</button>
+
+    digite o numero do lugar onde voce ja morou<br>
+    <input type="numbrt" id="input_numero"><br>
+    <button onclick="ver()">Relembrar moradia</button>
+
+    <div id="div"></div>
+
+</body>
+</html>
+
+<script>
+    var listabairro = []
+    function cadastrar(){
+        var bairro = input_bairro.value;
+        listabairro.push(bairro);
+    }
+
+    //cadastra e pesquisa pelo nº, logo irá aparecer o local de acordo com o numero
+    function ver(){
+        div.innerHTML = ''
+        var numero = Number(input_numero.value);
+
+            for(var i = 0; i<listabairro.length; i++){
+                if(numero-1 === i){
+                    div.innerHTML += `O nome do bairro que voce pesquisou é ${numero}: ${listabairro[i]}`
+                }else{
+                    div.innerHTML += `Esse local não foi registrado`
+                }
+        }
+    }
+</script>

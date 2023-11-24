@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    digite o destino de viagem<br>
+    <input type="text" name="" id="input_viagem"><br>
+    <button onclick="adicionar()" >Adicionar</button>
+    <div id="div"></div>
+
+    <button onclick="primeira()">Primeira Viagem</button><br>
+    <button onclick="terceira()">Terceira Viagem</button><br>
+    <button onclick="ultima()">Última Viagem</button><br>
+</body>
+</html>
+
+<script>
+    var lista = [];
+    function adicionar(){
+        var destino = input_viagem.value;
+        lista.push(destino);
+    }
+
+    function primeira(){
+            if(lista.length > 0 ){
+                div.innerHTML += `Sua primeira viagem é ${lista[0]}<br>`
+            }else{
+                div.innerHTML = "Você ainda não teve sua primeira viagem"
+        }
+    }
+
+    function terceira(){
+            if(lista.length > 2){
+                div.innerHTML += `Sua terceira viagem é ${lista[2]}<br>`;
+            } else {
+                div.innerHTML = "Você ainda não teve sua terceira viagem";
+            }
+        }
+
+    function ultima(){
+        var ultima = lista.length - 1;
+
+        if(lista.length > 0){
+                div.innerHTML += `Sua ultima viagem é ${lista[ultima]}<br>`
+            }else{
+                div.innerHTML = "Você ainda não teve sua primeira viagem"
+            }
+        }
+</script>
