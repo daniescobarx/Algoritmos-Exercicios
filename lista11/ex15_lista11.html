@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 15</title>
+</head>
+
+<body>
+    Digite o nome do produto:
+    <input type="text" id="input_nomeProduto"><br>
+    Digite o preço do produto:
+    <input type="number" id="input_precoProduto"><br>
+    
+    <button onclick="cadastrarProduto()">Cadastrar</button>
+    <button onclick="relatarEstoque()">Relatório de estoque</button>
+    
+    <div id="div_estoque"></div>
+</body>
+
+</html>
+<script>
+    var listaNomeProduto = [];
+    var listaPrecoProduto = [];
+
+    function cadastrarProduto() {
+        var nomeProduto = input_nomeProduto.value;
+        var precoProduto = Number(input_precoProduto.value);
+
+        listaNomeProduto.push(nomeProduto);
+        listaPrecoProduto.push(precoProduto);
+
+        input_nomeProduto.value = "";
+        input_precoProduto.value = "";
+    }
+    
+    function relatarEstoque() {
+        var estoque = "";
+        var ProdutoCaro = 0;
+        var IndiceNomeCaro = 0;
+        var SomaDosProdutos = 0;
+        var ProdutoBarato = listaPrecoProduto[0];
+        var IndiceNomeBarato = 0;
+
+        estoque += `Total de produtos: ${listaNomeProduto.length}<br>`;
+
+        for (var posicao = 0; posicao < listaNomeProduto.length; posicao++) {
+            
+            //produto naquela posicao + 1 para mostrar 
+            estoque += `Produto ${posicao + 1}: ${listaNomeProduto[posicao]}<br>`;
+
+            //vai mostrar o preco do produto dql posicao
+            estoque += `Preço de compra: R$${listaPrecoProduto[posicao]}. Vender por R$${(listaPrecoProduto[posicao] * 1.25)}<br>`;
+
+            if (listaPrecoProduto[posicao] > ProdutoCaro) {
+                ProdutoCaro = listaPrecoProduto[posicao];
+                IndiceNomeCaro = posicao;
+            }
+
+            if (listaPrecoProduto[posicao] < ProdutoBarato) {
+                ProdutoBarato = listaPrecoProduto[posicao];
+                //nome do produto
+                IndiceNomeBarato = posicao;
+            }
+            SomaDosProdutos += listaPrecoProduto[posicao] * 1.25;
+        }
+
+        var MediaDosProdutos = SomaDosProdutos / listaPrecoProduto.length;
+
+        estoque += `
+        O nome do produto mais caro: ${listaNomeProduto[IndiceNomeCaro]}<br>
+        O nome do produto mais barato: ${listaNomeProduto[IndiceNomeBarato]}<br>
+        A soma dos preços de compra dos produtos: R$${SomaDosProdutos}<br>
+        A média de preço de venda dos produtos: R$${MediaDosProdutos}<br>
+        `;
+
+        div_estoque.innerHTML = estoque;
+    }
+</script>
